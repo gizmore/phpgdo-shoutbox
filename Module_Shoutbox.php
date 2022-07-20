@@ -74,12 +74,12 @@ final class Module_Shoutbox extends GDO_Module
         {
             if ($this->cfgSidebarBox())
             {
-                GDT_Page::$INSTANCE->leftNav->addField(
+                GDT_Page::instance()->leftBar()->addField(
                     GDT_Method::make()->method(Box::make()));
             }
             else
             {
-                GDT_Page::$INSTANCE->leftNav->addField(
+                GDT_Page::instance()->leftBar()->addField(
                     GDT_Link::make()->label('gdo_sidebar')->href(
                         href('Shoutbox', 'Table')));
             }

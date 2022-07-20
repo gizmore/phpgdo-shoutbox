@@ -36,7 +36,7 @@ final class GDO_Shoutbox extends GDO
     public function getAge() { return Time::getAgo($this->getCreated()); }
     public function getCreated() { return $this->gdoVar('shout_created'); }
     public function displayCreated() { return Time::displayDate($this->getCreated()); }
-    public function getCreator() { return $this->getValue('shout_creator'); }
+    public function getCreator() { return $this->gdoValue('shout_creator'); }
     public function hrefEdit() { return href('Shoutbox', 'Edit', "&id={$this->getID()}"); }
     
     ###################

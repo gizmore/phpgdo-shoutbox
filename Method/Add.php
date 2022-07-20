@@ -92,7 +92,7 @@ class Add extends MethodForm
             $staff->displayName(),
             sitename(),
             $user->renderUserName(),
-            $shout->display('shout_text'),
+            $shout->gdoDisplay('shout_text'),
             url('Shoutbox', 'Delete', "&form[submit]=1&form[shout]={$shout->getID()}&form[token]={$shout->gdoHashcode()}"),
         ]));
         $mail->sendToUser($staff);

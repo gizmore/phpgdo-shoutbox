@@ -18,7 +18,7 @@ final class Box extends MethodQueryList
         return Module_Shoutbox::instance()->cfgBoxsize();
     }
     
-    public function getDefaultOrder()
+    public function getDefaultOrder() : ?string
     {
         return 'shout_created DESC';
     }

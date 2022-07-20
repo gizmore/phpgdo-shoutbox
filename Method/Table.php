@@ -13,7 +13,7 @@ final class Table extends MethodQueryList
         return GDO_Shoutbox::table();
     }
     
-    public function getDefaultOrder() { return 'shout_created DESC'; }
+    public function getDefaultOrder() : ?string { return 'shout_created DESC'; }
     
     public function getTitleLangKey()
     {

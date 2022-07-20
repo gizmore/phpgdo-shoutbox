@@ -33,11 +33,11 @@ class Add extends MethodForm
     public function createForm(GDT_Form $form) : void
     {
         $table = GDO_Shoutbox::table();
-        $form->addFields([
+        $form->addFields(
             $table->gdoColumn('shout_text'),
             GDT_Validator::make('cooldown')->validator('shout_text', [$this, 'validateCooldown']),
             GDT_AntiCSRF::make(),
-        ]);
+        );
         if (Module_Shoutbox::instance()->cfgCaptcha(GDO_User::current()))
         {
             $form->addFieldAfter(GDT_Captcha::make(), 'cooldown');

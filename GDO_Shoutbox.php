@@ -64,7 +64,7 @@ final class GDO_Shoutbox extends GDO
     ##############
     ### Render ###
     ##############
-    public function renderList()
+    public function renderList() : string
     {
         return GDT_Template::php('Shoutbox', 'shout_li.php', ['shout' => $this]);
     }

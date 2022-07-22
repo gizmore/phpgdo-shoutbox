@@ -35,7 +35,7 @@ class Add extends MethodForm
         $table = GDO_Shoutbox::table();
         $form->addFields(
             $table->gdoColumn('shout_text'),
-            GDT_Validator::make('cooldown')->validator('shout_text', [$this, 'validateCooldown']),
+            GDT_Validator::make('cooldown')->validatorFor($form, 'shout_text', [$this, 'validateCooldown']),
             GDT_AntiCSRF::make(),
         );
         if (Module_Shoutbox::instance()->cfgCaptcha(GDO_User::current()))
@@ -73,7 +73,7 @@ class Add extends MethodForm
             $this->sendMails($user, $shout);
         }
 
-        return Website::redirectMessage('msg_shouted', null, Website::hrefBack());
+        return $this->redirectMessage('msg_shouted', null, Website::hrefBack());
     }
     
     public function sendMails(GDO_User $user, GDO_Shoutbox $shout)

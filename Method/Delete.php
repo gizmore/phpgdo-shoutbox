@@ -73,7 +73,7 @@ final class Delete extends MethodForm
     {
         $shout = $this->getShout();
         $shout->markDeleted();
-        return Website::redirectMessage(
+        return $this->redirectMessage(
             'msg_shout_deleted', null, Website::hrefBack());
     }
 

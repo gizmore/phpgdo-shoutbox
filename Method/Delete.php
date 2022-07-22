@@ -19,7 +19,7 @@ use GDO\Form\GDT_Submit;
  */
 final class Delete extends MethodForm
 {
-    public function isCLI() { return false; }
+    public function isCLI() : bool { return false; }
     
     public function createForm(GDT_Form $form) : void
     {

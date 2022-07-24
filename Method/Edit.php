@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Shoutbox\Method;
 
+use GDO\Core\GDO;
 use GDO\Form\MethodCrud;
 use GDO\Shoutbox\GDO_Shoutbox;
 
@@ -15,7 +16,7 @@ final class Edit extends MethodCrud
         return href('Shoutbox', 'Table');
     }
 
-    public function gdoTable()
+    public function gdoTable() : GDO
     {
         return GDO_Shoutbox::table();
     }

@@ -26,7 +26,7 @@ use GDO\Captcha\GDT_Captcha;
  */
 class Add extends MethodForm
 {
-    public function saveLastUrl() { return false; }
+    public function saveLastUrl() : bool { return false; }
     
     public function formName() { return 'form_shout'; }
     
@@ -35,13 +35,15 @@ class Add extends MethodForm
         $table = GDO_Shoutbox::table();
         $form->addFields(
             $table->gdoColumn('shout_text'),
-            GDT_Validator::make('cooldown')->validatorFor($form, 'shout_text', [$this, 'validateCooldown']),
-            GDT_AntiCSRF::make(),
+        );
+        $form->addFields(
+        	GDT_Validator::make('cooldown')->validatorFor($form, 'shout_text', [$this, 'validateCooldown']),
         );
         if (Module_Shoutbox::instance()->cfgCaptcha(GDO_User::current()))
         {
-            $form->addFieldAfter(GDT_Captcha::make(), 'cooldown');
+            $form->addField(GDT_Captcha::make(), 'cooldown');
         }
+        $form->addField(GDT_AntiCSRF::make());
         $form->actions()->addField(GDT_Submit::make());
     }
     

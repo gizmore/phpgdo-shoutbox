@@ -16,7 +16,7 @@ use GDO\Form\GDT_Form;
 final class AddSidebar extends Add
 {
     public function formName() { return 'frm_shout'; }
-    public function getTitleLangKey() { return 'ft_shoutbox_add'; }
+    public function getTitleLangKey() { return 'mt_shoutbox_add'; }
     public function createForm(GDT_Form $form) : void
     {
         parent::createForm($form);

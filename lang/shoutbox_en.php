@@ -19,11 +19,11 @@ return [
     # Table
     
     # Delete
-    'ft_shoutbox_delete' => 'Delete Shout',
+    'mt_shoutbox_delete' => 'Delete Shout',
     'msg_shout_deleted' => 'The shoutbox entry has been deleted.',
     
     # Add
-    'ft_shoutbox_add' => 'Shout!',
+    'mt_shoutbox_add' => 'Shout!',
     'err_shout_cooldown' => 'You have shouted recently. Please wait %s.',
     'msg_shouted' => 'Your text has been added to the shoutbox.',
     'mail_subj_shoutbox' => '%s: New shoutbox entry',

@@ -3,12 +3,13 @@ namespace GDO\Shoutbox\Method;
 
 use GDO\Table\MethodQueryList;
 use GDO\Shoutbox\GDO_Shoutbox;
+use GDO\Core\GDO;
 use GDO\Core\GDT_Method;
 
 
 final class Table extends MethodQueryList
 {
-    public function gdoTable()
+    public function gdoTable() : GDO
     {
         return GDO_Shoutbox::table();
     }

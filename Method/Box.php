@@ -2,6 +2,7 @@
 namespace GDO\Shoutbox\Method;
 
 use GDO\Shoutbox\GDO_Shoutbox;
+use GDO\Core\GDO;
 use GDO\Core\GDT_Method;
 use GDO\UI\GDT_Link;
 use GDO\Table\MethodQueryList;
@@ -13,7 +14,7 @@ final class Box extends MethodQueryList
     public function isOrdered() { return false; }
     public function isSearched() { return false; }
     
-    public function getDefaultIPP()
+    public function getDefaultIPP() : int
     {
         return Module_Shoutbox::instance()->cfgBoxsize();
     }
@@ -23,7 +24,7 @@ final class Box extends MethodQueryList
         return 'shout_created DESC';
     }
     
-    public function gdoTable()
+    public function gdoTable() : GDO
     {
         return GDO_Shoutbox::table();
     }

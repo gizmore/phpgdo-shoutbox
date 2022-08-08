@@ -26,7 +26,7 @@ use GDO\Captcha\GDT_Captcha;
  */
 class Add extends MethodForm
 {
-    public function saveLastUrl() : bool { return false; }
+    public function isSavingLastUrl() : bool { return false; }
     
     public function formName() { return 'form_shout'; }
     

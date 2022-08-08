@@ -11,7 +11,7 @@ use GDO\Shoutbox\GDO_Shoutbox;
  */
 final class Edit extends MethodCrud
 {
-    public function hrefList()
+    public function hrefList() : string
     {
         return href('Shoutbox', 'Table');
     }

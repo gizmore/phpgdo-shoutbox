@@ -16,15 +16,15 @@ final class Table extends MethodQueryList
     
     public function getDefaultOrder() : ?string { return 'shout_created DESC'; }
     
-    public function getTitleLangKey()
-    {
-        return 'gdo_shoutbox';
-    }
+//     public function getTitleLangKey()
+//     {
+//         return 'gdo_shoutbox';
+//     }
     
-    public function getTableTitle()
-    {
-        return t('list_shoutbox_box', [$this->table->countItems()]);
-    }
+//     public function getTableTitle()
+//     {
+//         return t('list_shoutbox_box', [$this->table->countItems()]);
+//     }
  
     public function getQuery()
     {

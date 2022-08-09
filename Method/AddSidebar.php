@@ -21,7 +21,7 @@ final class AddSidebar extends Add
     {
         parent::createForm($form);
         $form->slim();
-        $form->focusable(false);
+        $form->noFocus();
         $form->noTitle();
         $form->action(href('Shoutbox', 'Add'));
     }

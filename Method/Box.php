@@ -4,6 +4,7 @@ namespace GDO\Shoutbox\Method;
 use GDO\Shoutbox\GDO_Shoutbox;
 use GDO\Core\GDO;
 use GDO\Core\GDT_Method;
+use GDO\DB\Query;
 use GDO\UI\GDT_Link;
 use GDO\Table\MethodQueryList;
 use GDO\Shoutbox\Module_Shoutbox;
@@ -29,7 +30,7 @@ final class Box extends MethodQueryList
         return GDO_Shoutbox::table();
     }
     
-    public function getQuery()
+    public function getQuery() : Query
     {
         return parent::getQuery()->where('shout_deleted IS NULL');
     }

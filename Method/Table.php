@@ -5,6 +5,7 @@ use GDO\Table\MethodQueryList;
 use GDO\Shoutbox\GDO_Shoutbox;
 use GDO\Core\GDO;
 use GDO\Core\GDT_Method;
+use GDO\DB\Query;
 
 
 final class Table extends MethodQueryList
@@ -26,7 +27,7 @@ final class Table extends MethodQueryList
 //         return t('list_shoutbox_box', [$this->table->countItems()]);
 //     }
  
-    public function getQuery()
+    public function getQuery() : Query
     {
         return parent::getQuery()->where('shout_deleted IS NULL');
     }

@@ -12,7 +12,7 @@ use GDO\Table\GDT_Table;
 
 final class Box extends MethodQueryList
 {
-    public function isOrdered() { return false; }
+    public function isOrdered() : bool { return false; }
     public function isSearched() { return false; }
     
     public function getDefaultIPP() : int

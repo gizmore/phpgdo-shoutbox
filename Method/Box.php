@@ -49,7 +49,7 @@ final class Box extends MethodQueryList
     {
         parent::setupCollection($table);
         $table->headers->name = 'sht';
-        GDT_Table::$ORDER_NAME--;
+//         GDT_Table::$ORDER_NAME--;
         return $table;
     }
     

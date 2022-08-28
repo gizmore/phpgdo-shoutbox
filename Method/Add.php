@@ -41,7 +41,7 @@ class Add extends MethodForm
         );
         if (Module_Shoutbox::instance()->cfgCaptcha(GDO_User::current()))
         {
-            $form->addField(GDT_Captcha::make(), 'cooldown');
+            $form->addField(GDT_Captcha::make(), $form->getField('cooldown'));
         }
         $form->addField(GDT_AntiCSRF::make());
         $form->actions()->addField(GDT_Submit::make());

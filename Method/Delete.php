@@ -8,14 +8,15 @@ use GDO\Core\GDT_Object;
 use GDO\Shoutbox\GDO_Shoutbox;
 use GDO\Form\GDT_Validator;
 use GDO\User\GDO_User;
-use GDO\Core\Website;
 use GDO\Form\GDT_Submit;
 
 /**
  * Delete a shoutbox message via mail.
  * Validates by token and redirects back.
+ * 
  * @author gizmore
- * @version 6.10.4
+ * @version 7.0.1
+ * @since 6.9.0
  */
 final class Delete extends MethodForm
 {
@@ -73,8 +74,7 @@ final class Delete extends MethodForm
     {
         $shout = $this->getShout();
         $shout->markDeleted();
-        return $this->redirectMessage(
-            'msg_shout_deleted', null, Website::hrefBack());
+        return $this->redirectMessage('msg_shout_deleted');
     }
 
 }

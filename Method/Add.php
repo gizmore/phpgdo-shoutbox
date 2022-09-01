@@ -75,7 +75,7 @@ class Add extends MethodForm
             $this->sendMails($user, $shout);
         }
 
-        return $this->redirectMessage('msg_shouted', null, Website::hrefBack());
+        return $this->redirectMessage('msg_shouted');
     }
     
     public function sendMails(GDO_User $user, GDO_Shoutbox $shout)

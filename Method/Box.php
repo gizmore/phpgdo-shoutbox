@@ -40,7 +40,7 @@ final class Box extends MethodQueryList
         $add = AddSidebar::make();
         $add->getForm()->slim();
         return parent::execute()->addFieldFirst(
-            GDT_Link::make('link_shoutbox')->label('gdo_shoutbox')->
+            GDT_Link::make('link_shoutbox')->text('gdo_shoutbox')->
                 href(href('Shoutbox', 'Table')))->addField(
                     GDT_Method::make()->method($add));
     }

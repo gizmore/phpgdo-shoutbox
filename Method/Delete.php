@@ -37,7 +37,7 @@ final class Delete extends MethodForm
         {
             if ($shout->isDeleted())
             {
-                return $field->error('err_deleted', [$shout->displayName()]);
+                return $field->error('err_deleted', [$shout->renderName()]);
             }
         }
         return true;

@@ -91,7 +91,7 @@ class Add extends MethodForm
         $mail = Mail::botMail();
         $mail->setSubject(tusr($staff, 'mail_subj_shoutbox', [sitename()]));
         $mail->setBody(tusr($staff, 'mail_body_shoutbox', [
-            $staff->displayName(),
+            $staff->renderName(),
             sitename(),
             $user->renderUserName(),
             $shout->gdoDisplay('shout_text'),

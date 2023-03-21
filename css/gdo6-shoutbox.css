@@ -1,12 +1,12 @@
 .gdo6-shoutbox-message span {
-	float: right;
-	display: block;
+    float: right;
+    display: block;
 }
 
 .gdo6-shoutbox-message > div:after {
-	clear: both;
+    clear: both;
 }
 
 #gdo-left-bar .gdt-list {
-	width: 100%;
+    width: 100%;
 }

@@ -7,18 +7,20 @@ use GDO\Shoutbox\GDO_Shoutbox;
 
 /**
  * Edit or delete a Shout.
+ *
  * @author gizmore
  */
 final class Edit extends MethodCrud
 {
-    public function hrefList() : string
-    {
-        return href('Shoutbox', 'Table');
-    }
 
-    public function gdoTable() : GDO
-    {
-        return GDO_Shoutbox::table();
-    }
-    
+	public function hrefList(): string
+	{
+		return href('Shoutbox', 'Table');
+	}
+
+	public function gdoTable(): GDO
+	{
+		return GDO_Shoutbox::table();
+	}
+
 }

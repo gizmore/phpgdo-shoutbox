@@ -1,6 +1,7 @@
 <?php
 namespace GDO\Shoutbox\Method;
 
+use GDO\Core\GDT;
 use GDO\Core\GDT_Object;
 use GDO\Core\GDT_Token;
 use GDO\Form\GDT_Form;
@@ -32,7 +33,7 @@ final class Delete extends MethodForm
 		$form->actions()->addField(GDT_Submit::make());
 	}
 
-	public function formValidated(GDT_Form $form)
+	public function formValidated(GDT_Form $form): GDT
 	{
 		$shout = $this->getShout();
 		$shout->markDeleted();

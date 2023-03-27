@@ -2,6 +2,7 @@
 namespace GDO\Shoutbox\Method;
 
 use GDO\Core\GDO;
+use GDO\Core\GDT;
 use GDO\Core\GDT_Method;
 use GDO\DB\Query;
 use GDO\Shoutbox\GDO_Shoutbox;
@@ -33,7 +34,7 @@ final class Table extends MethodQueryList
 		return parent::getQuery()->where('shout_deleted IS NULL');
 	}
 
-	public function execute()
+	public function execute(): GDT
 	{
 		$response = parent::execute();
 		return $response->addField(GDT_Method::with(Add::make()));

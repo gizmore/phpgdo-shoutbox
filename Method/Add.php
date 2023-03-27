@@ -2,6 +2,7 @@
 namespace GDO\Shoutbox\Method;
 
 use GDO\Captcha\GDT_Captcha;
+use GDO\Core\GDT;
 use GDO\Core\GDT_String;
 use GDO\Date\Time;
 use GDO\Form\GDT_AntiCSRF;
@@ -45,7 +46,7 @@ class Add extends MethodForm
 		$form->actions()->addField(GDT_Submit::make());
 	}
 
-	public function formValidated(GDT_Form $form)
+	public function formValidated(GDT_Form $form): GDT
 	{
 		$user = GDO_User::current()->persistent();
 		$shout = GDO_Shoutbox::blank([

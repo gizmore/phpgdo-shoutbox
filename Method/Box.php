@@ -2,6 +2,7 @@
 namespace GDO\Shoutbox\Method;
 
 use GDO\Core\GDO;
+use GDO\Core\GDT;
 use GDO\Core\GDT_Method;
 use GDO\DB\Query;
 use GDO\Shoutbox\GDO_Shoutbox;
@@ -15,7 +16,7 @@ final class Box extends MethodQueryList
 
 	public function isOrdered(): bool { return false; }
 
-	public function isSearched() { return false; }
+	public function isSearched(): bool { return false; }
 
 	public function getDefaultIPP(): int
 	{
@@ -37,7 +38,7 @@ final class Box extends MethodQueryList
 		return parent::getQuery()->where('shout_deleted IS NULL');
 	}
 
-	public function execute()
+	public function execute(): GDT
 	{
 		$add = AddSidebar::make();
 		$add->getForm()->slim();

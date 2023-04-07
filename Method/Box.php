@@ -48,12 +48,10 @@ final class Box extends MethodQueryList
 			GDT_Method::make()->method($add));
 	}
 
-	public function setupCollection(GDT_Table $table)
+	public function setupCollection(GDT_Table $table): void
 	{
 		parent::setupCollection($table);
 		$table->headers->name = 'sht';
-//         GDT_Table::$ORDER_NAME--;
-		return $table;
 	}
 
 }

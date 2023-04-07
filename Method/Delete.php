@@ -28,7 +28,7 @@ final class Delete extends MethodForm
 	{
 		$form->addField(GDT_Object::make('shout')->table(GDO_Shoutbox::table())->notNull());
 		$form->addField(GDT_Validator::make()->validatorFor($form, 'shout', [$this, 'validateDeleted']));
-		$form->addField(GDT_Token::make('token')->initial()->notNull());
+		$form->addField(GDT_Token::make('token')->initial(null)->notNull());
 		$form->addField(GDT_Validator::make()->validatorFor($form, 'shout', [$this, 'validateToken']));
 		$form->actions()->addField(GDT_Submit::make());
 	}

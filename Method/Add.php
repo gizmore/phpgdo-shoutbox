@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace GDO\Shoutbox\Method;
 
 use GDO\Captcha\GDT_Captcha;
@@ -21,13 +22,15 @@ use GDO\User\GDO_User;
  *  - Checks for cooldown.
  *  - Sends moderation mail.
  *
- * @version 6.10.4
+ * @version 7.0.3
  * @author gizmore
  */
 class Add extends MethodForm
 {
 
+
 	public function isSavingLastUrl(): bool { return false; }
+
 
 	public function createForm(GDT_Form $form): void
 	{
@@ -84,7 +87,7 @@ class Add extends MethodForm
 		$mail->sendToUser($staff);
 	}
 
-	public function formName() { return 'form_shout'; }
+	public function getFormName(): string { return 'form_shout'; }
 
 	public function validateCooldown(GDT_Form $form, GDT_String $field, $value)
 	{

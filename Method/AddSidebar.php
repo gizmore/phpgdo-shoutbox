@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace GDO\Shoutbox\Method;
 
 use GDO\Form\GDT_Form;
@@ -9,14 +10,17 @@ use GDO\Form\GDT_Form;
  *  - Checks for cooldown.
  *  - Sends moderation mail.
  *
- * @version 6.10.6
+ * @version 7.0.3
  * @since 6.10.4
  * @author gizmore
  */
 final class AddSidebar extends Add
 {
 
-	public function formName() { return 'frm_shout'; }
+	public function getFormName(): string
+	{
+		return 'add_shout_sidebar';
+	}
 
 	public function createForm(GDT_Form $form): void
 	{
@@ -27,6 +31,9 @@ final class AddSidebar extends Add
 		$form->action(href('Shoutbox', 'Add'));
 	}
 
-	public function getTitleLangKey() { return 'mt_shoutbox_add'; }
+	public function getMethodTitle(): string
+	{
+		return t('mt_shoutbox_add');
+	}
 
 }

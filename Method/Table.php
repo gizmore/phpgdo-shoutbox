@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace GDO\Shoutbox\Method;
 
 use GDO\Core\GDO;
@@ -8,26 +9,26 @@ use GDO\DB\Query;
 use GDO\Shoutbox\GDO_Shoutbox;
 use GDO\Table\MethodQueryList;
 
-
+/**
+ * Shoutbox - Tabular overview.
+ */
 final class Table extends MethodQueryList
 {
+
+	public function getTableTitleLangKey(): string
+	{
+		return 'gdo_shoutbox';
+	}
 
 	public function gdoTable(): GDO
 	{
 		return GDO_Shoutbox::table();
 	}
 
-	public function getDefaultOrder(): ?string { return 'shout_created DESC'; }
-
-//     public function getTitleLangKey()
-//     {
-//         return 'gdo_shoutbox';
-//     }
-
-//     public function getTableTitle()
-//     {
-//         return t('list_shoutbox_box', [$this->table->countItems()]);
-//     }
+	public function getDefaultOrder(): ?string
+	{
+		return 'shout_created DESC';
+	}
 
 	public function getQuery(): Query
 	{
@@ -37,7 +38,7 @@ final class Table extends MethodQueryList
 	public function execute(): GDT
 	{
 		$response = parent::execute();
-		return $response->addField(GDT_Method::with(Add::make()));
+		return $response->addField(GDT_Method::make()->method(Add::make()));
 	}
 
 }

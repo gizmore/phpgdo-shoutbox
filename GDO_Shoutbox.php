@@ -22,7 +22,7 @@ use GDO\User\GDO_User;
 final class GDO_Shoutbox extends GDO
 {
 
-	public static function lastShoutFrom(GDO_User $user)
+	public static function lastShoutFrom(GDO_User $user): ?static
 	{
 		return self::table()->select()->
 		where("shout_creator={$user->getID()}")->
@@ -49,28 +49,28 @@ final class GDO_Shoutbox extends GDO
 		return GDT_Template::php('Shoutbox', 'shout_li.php', ['shout' => $this]);
 	}
 
-	public function getAge() { return Time::getAgo($this->getCreated()); }
+	public function getAge(): float { return Time::getAgo($this->getCreated()); }
 
-	public function getCreated() { return $this->gdoVar('shout_created'); }
+	public function getCreated(): string { return $this->gdoVar('shout_created'); }
 
-	public function displayCreated() { return Time::displayDate($this->getCreated()); }
+	public function displayCreated(): string { return Time::displayDate($this->getCreated()); }
 
 	###################
 	### Permissions ###
 	###################
 
-	public function getCreator() { return $this->gdoValue('shout_creator'); }
+	public function getCreator(): GDO_User { return $this->gdoValue('shout_creator'); }
 	##############
 	### Static ###
 	##############
 
-	public function hrefEdit() { return href('Shoutbox', 'Edit', "&id={$this->getID()}"); }
+	public function hrefEdit(): string { return href('Shoutbox', 'Edit', "&id={$this->getID()}"); }
 
 	##############
 	### Render ###
 	##############
 
-	public function canDelete(GDO_User $user)
+	public function canDelete(GDO_User $user): bool
 	{
 		if ($user->isStaff())
 		{

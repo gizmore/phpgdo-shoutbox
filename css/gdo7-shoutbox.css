@@ -1,9 +1,9 @@
-.gdo6-shoutbox-message span {
+.gdo-shoutbox-message span {
     float: right;
     display: block;
 }
 
-.gdo6-shoutbox-message > div:after {
+.gdo-shoutbox-message > div:after {
     clear: both;
 }
 

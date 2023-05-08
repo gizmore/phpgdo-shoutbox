@@ -24,7 +24,7 @@ final class Delete extends MethodForm
 
 	public function isCLI(): bool { return false; }
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		$form->addField(GDT_Object::make('shout')->table(GDO_Shoutbox::table())->notNull());
 		$form->addField(GDT_Validator::make()->validatorFor($form, 'shout', [$this, 'validateDeleted']));

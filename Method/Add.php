@@ -32,7 +32,7 @@ class Add extends MethodForm
 	public function isSavingLastUrl(): bool { return false; }
 
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		$table = GDO_Shoutbox::table();
 		$form->addFields(

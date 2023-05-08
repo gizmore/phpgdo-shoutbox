@@ -22,7 +22,7 @@ final class AddSidebar extends Add
 		return 'add_shout_sidebar';
 	}
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		parent::createForm($form);
 		$form->slim();

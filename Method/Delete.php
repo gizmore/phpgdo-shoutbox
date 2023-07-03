@@ -22,8 +22,6 @@ use GDO\User\GDO_User;
 final class Delete extends MethodForm
 {
 
-	public function isCLI(): bool { return false; }
-
 	protected function createForm(GDT_Form $form): void
 	{
 		$form->addField(GDT_Object::make('shout')->table(GDO_Shoutbox::table())->notNull());

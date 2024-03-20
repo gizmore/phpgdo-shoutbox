@@ -27,6 +27,15 @@ use GDO\User\GDO_User;
  */
 class Add extends MethodForm
 {
+    public function isUserRequired(): bool
+    {
+        return false;
+    }
+
+    public function isGuestAllowed(): bool
+    {
+        return true;
+    }
 
 
 	public function isSavingLastUrl(): bool { return false; }

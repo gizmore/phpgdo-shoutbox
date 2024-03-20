@@ -15,7 +15,7 @@ use GDO\Table\MethodQueryList;
 final class Table extends MethodQueryList
 {
 
-	public function getTableTitleLangKey(): string
+    public function getTableTitleLangKey(): string
 	{
 		return 'gdo_shoutbox';
 	}
